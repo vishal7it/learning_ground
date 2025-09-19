@@ -1,11 +1,10 @@
 import React from 'react'
-import Movies from './MovieZone/Movies'
-import UseEffect from './components/UseEffect'
+import Meal from './Food_Recipe/Meal'
 const App = () => {
 
   return (
     <>
-      <UseEffect />
+      <Meal />
     </>
   )
 }
