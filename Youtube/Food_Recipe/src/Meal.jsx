@@ -22,13 +22,18 @@ const Meal = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const api = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputData}`
-    );
-    const data = await api.json();
-    console.log("search data = ", data.meals);
-    setMealData(data.meals);
-    setInputData(" ");
+    try {
+      const api = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputData}`
+      );
+      const data = await api.json();
+      console.log("search data = ", data.meals);
+      setMealData(data.meals);
+      setInputData(" ");
+    } catch (error) {
+      console.log(error)
+    }
+
   };
   return (
     <>
